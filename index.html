@@ -2,15 +2,22 @@
 <html>
 <head>
   <script>
-        window.onload = function() {
-            var urlParams = new URLSearchParams(window.location.search);
-            var placeId = urlParams.get('placeid');
-            
-            if (placeId) {
+    window.onload = function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var placeId = urlParams.get('placeid');
+        var gameInstanceId = urlParams.get('gameInstanceId');
+      
+        if (placeId) {
+            if (gameInstanceId) {
+                window.location.href = 'roblox://placeId=' + placeId + '&gameInstanceId=' + gameInstanceId;
+            } else {
                 window.location.href = 'roblox://placeId=' + placeId;
-            } else {window.location.href = 'https://discord.gg/8ERSHK8dtt'}
-        };
-    </script>
+            }
+        } else {
+            window.location.href = 'https://discord.gg/8ERSHK8dtt';
+        }
+    };
+  </script>
 </head>
 <body style="background-color=#313338">
 </body>
